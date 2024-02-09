@@ -1,7 +1,7 @@
-[gd_scene load_steps=41 format=3 uid="uid://elv0mfr0otff"]
+[gd_scene load_steps=41 format=3 uid="uid://dpd4stns1hs16"]
 
 [ext_resource type="Script" path="res://Scripts/player.cs" id="1_qfebv"]
-[ext_resource type="Texture2D" uid="uid://bvof2fn7j4u1n" path="res://Art/sprites/characters/player.png" id="2_ceveq"]
+[ext_resource type="Texture2D" uid="uid://dy5sv041bgrl8" path="res://Art/sprites/characters/player.png" id="2_ceveq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gbev2"]
 atlas = ExtResource("2_ceveq")
@@ -293,6 +293,7 @@ radius = 4.0
 height = 8.0
 
 [node name="player" type="CharacterBody2D"]
+position = Vector2(47, 43)
 script = ExtResource("1_qfebv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
