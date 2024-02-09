@@ -289,18 +289,27 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ka724"]
-radius = 4.0
-height = 8.0
+radius = 5.0
+height = 10.0
 
 [node name="player" type="CharacterBody2D"]
-position = Vector2(47, 43)
+y_sort_enabled = true
 script = ExtResource("1_qfebv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -8)
+position = Vector2(0, -15)
 sprite_frames = SubResource("SpriteFrames_rmbc5")
 animation = &"back_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
+position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_ka724")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+limit_left = 0
+limit_top = 0
+limit_right = 1070
+limit_bottom = 543
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
