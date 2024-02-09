@@ -4,97 +4,97 @@ using Godot;
 
 public partial class player : CharacterBody2D
 {
-    private AnimatedSprite2D anim;
-    public Vector2 current_dir = new Vector2(0, 0); // Vi gemmer retning her
+	private AnimatedSprite2D anim;
+	public Vector2 current_dir = new Vector2(0, 0); // Vi gemmer retning her
 
-    public override void _Ready()
-    {
-        anim = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-        anim.Play("front_idle");
-    }
+	public override void _Ready()
+	{
+		anim = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
+		anim.Play("front_idle");
+	}
 
-    [Export]
-    public int Speed { get; set; } = 100;    // Hastighed, redigerbar fra Inspector (ved Export)
+	[Export]
+	public int Speed { get; set; } = 100;    // Hastighed, redigerbar fra Inspector (ved Export)
 
-    public void GetInput()
-    {
-        Vector2 inputDirection = Input.GetVector("left", "right", "up", "down");
-        Velocity = inputDirection * Speed;
+	public void GetInput()
+	{
+		Vector2 inputDirection = Input.GetVector("left", "right", "up", "down");
+		Velocity = inputDirection * Speed;
 
-        if (inputDirection != new Vector2(0, 0))
-        {
-            PlayAnimation(1);
-            current_dir = inputDirection;
-        }
-        else
-            PlayAnimation(0);
-
-
-
-
-    }
-
-    public override void _PhysicsProcess(double delta)
-    {
-        GetInput();     // Henter Player keyboard input
-        MoveAndSlide(); // Flytter sig i henhold fysikkens kræfter og glider af kolliderende Objekter
-
-        Move_Rigidbody(10);
-
-    }
+		if (inputDirection != new Vector2(0, 0))
+		{
+			PlayAnimation(1);
+			current_dir = inputDirection;
+		}
+		else
+			PlayAnimation(0);
 
 
 
-    public void PlayAnimation(int movement)
-    {
 
-        Vector2 dir = current_dir;
+	}
 
-        if (dir == new Vector2(1, 0))
-        {
-            anim.FlipH = false;
-            if (movement == 1)
-            {
-                anim.Play("side_walk");
-            }
-            else if (movement == 0)
-            {
-                anim.Play("side_idle");
-            }
-        }
-        else if (dir == new Vector2(-1, 0))
-        {
-            anim.FlipH = true;
-            if (movement == 1)
-                anim.Play("side_walk");
-            else if (movement == 0)
-                anim.Play("side_idle");
-        }
-        else if (dir == new Vector2(0, -1))
-        {
-            if (movement == 1)
-                anim.Play("back_walk");
-            else if (movement == 0)
-                anim.Play("back_idle");
-        }
-        else if (dir == new Vector2(0, 1))
-        {
-            if (movement == 1)
-                anim.Play("front_walk");
-            else if (movement == 0)
-                anim.Play("front_idle");
-        }
-    }
+	public override void _PhysicsProcess(double delta)
+	{
+		GetInput();     // Henter Player keyboard input
+		MoveAndSlide(); // Flytter sig i henhold fysikkens kræfter og glider af kolliderende Objekter
 
-    public void Move_Rigidbody(float push_force)
-    {
-        for (int i = 0; i < GetSlideCollisionCount(); i++)
-        {
-            var c = GetSlideCollision(i);
-            if (c.GetCollider() is RigidBody2D)
-            {
-                (c.GetCollider() as RigidBody2D).ApplyCentralImpulse(-c.GetNormal() * push_force);
-            }
-        }
-    }
+		Move_Rigidbody(10);
+
+	}
+
+
+
+	public void PlayAnimation(int movement)
+	{
+
+		Vector2 dir = current_dir;
+
+		if (dir == new Vector2(1, 0))
+		{
+			anim.FlipH = false;
+			if (movement == 1)
+			{
+				anim.Play("side_walk");
+			}
+			else if (movement == 0)
+			{
+				anim.Play("side_idle");
+			}
+		}
+		else if (dir == new Vector2(-1, 0))
+		{
+			anim.FlipH = true;
+			if (movement == 1)
+				anim.Play("side_walk");
+			else if (movement == 0)
+				anim.Play("side_idle");
+		}
+		else if (dir == new Vector2(0, -1))
+		{
+			if (movement == 1)
+				anim.Play("back_walk");
+			else if (movement == 0)
+				anim.Play("back_idle");
+		}
+		else if (dir == new Vector2(0, 1))
+		{
+			if (movement == 1)
+				anim.Play("front_walk");
+			else if (movement == 0)
+				anim.Play("front_idle");
+		}
+	}
+
+	public void Move_Rigidbody(float push_force)
+	{
+		for (int i = 0; i < GetSlideCollisionCount(); i++)
+		{
+			var c = GetSlideCollision(i);
+			if (c.GetCollider() is RigidBody2D)
+			{
+				(c.GetCollider() as RigidBody2D).ApplyCentralImpulse(-c.GetNormal() * push_force);
+			}
+		}
+	}
 }
