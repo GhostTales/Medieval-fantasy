@@ -25,32 +25,32 @@ public partial class enemy : BehaviorTree.Tree
     [Export]
     float _speed;
 
-
+    int _chase_range = 100;
     protected override BtNode SetupTree()
     {
 
         BtNode root = new Sequence(new List<BtNode>
         {
-            new TaskAnimateSprite(_Enemy_Sprites, _Enemy_Frames, _enemy, _player, _waypoints, 150),
+            new TaskAnimateSprite(_Enemy_Sprites, _Enemy_Frames, _enemy, _player, _waypoints, _chase_range),
 
             new Selector(new List<BtNode>
                 {
                     new Sequence(new List<BtNode>
                     {
                         new TaskFleeHealth(_health, _max_health),
-                        new TaskFleeDist(_enemy, _player, 150),
+                        new TaskFleeDist(_enemy, _player, _chase_range),
                         new TaskFlee(_enemy, _player, _speed)
                     }),
 
                     new Sequence(new List<BtNode>
                     {
-                        new TaskAttackDist(_enemy, _player, 50),
+                        new TaskAttackDist(_enemy, _player, 25),
                         new TaskAttack(_enemy, _player, _attackTimer)
                     }),
 
                     new Sequence(new List<BtNode>
                     {
-                        new TaskChaseDist(_enemy, _player , 150),
+                        new TaskChaseDist(_enemy, _player , _chase_range),
                         new TaskChase(_enemy, _player, _speed)
                     }),
 

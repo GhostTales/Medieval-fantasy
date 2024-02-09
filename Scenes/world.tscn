@@ -1,9 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://clufwlbupmudw"]
+[gd_scene load_steps=32 format=3 uid="uid://clufwlbupmudw"]
 
-[ext_resource type="Texture2D" uid="uid://irad151id2gb" path="res://Art/sprites/tilesets/plains.png" id="1_xsk5q"]
-[ext_resource type="Texture2D" uid="uid://di4107oolhr3v" path="res://Art/sprites/tilesets/grass.png" id="2_aculb"]
-[ext_resource type="Texture2D" uid="uid://cfe7wmtj6hdtl" path="res://Art/sprites/objects/objects.png" id="3_12r18"]
-[ext_resource type="PackedScene" uid="uid://dpd4stns1hs16" path="res://Scenes/player.tscn" id="4_dqyoa"]
+[ext_resource type="Texture2D" uid="uid://b2fkfod2fgrm0" path="res://Art/sprites/tilesets/plains.png" id="1_xsk5q"]
+[ext_resource type="Texture2D" uid="uid://r3bfunvx4p2k" path="res://Art/sprites/tilesets/grass.png" id="2_aculb"]
+[ext_resource type="PackedScene" uid="uid://bpionn3tlj8gu" path="res://Scenes/enemy.tscn" id="2_e1781"]
+[ext_resource type="Texture2D" uid="uid://du3ah4b8xqgd8" path="res://Art/sprites/objects/objects.png" id="3_12r18"]
+[ext_resource type="Texture2D" uid="uid://dvyp17hhop4u6" path="res://Art/sprites/characters/free-field-enemies-pixel-art-for-tower-defense/Goblin/U_Walk.png" id="3_v6mol"]
+[ext_resource type="Texture2D" uid="uid://caxs5bllatui5" path="res://Art/sprites/characters/free-field-enemies-pixel-art-for-tower-defense/Goblin/D_Walk.png" id="4_76oik"]
+[ext_resource type="PackedScene" uid="uid://elv0mfr0otff" path="res://Scenes/player.tscn" id="4_dqyoa"]
+[ext_resource type="Texture2D" uid="uid://75qdyvorpkon" path="res://Art/sprites/characters/free-field-enemies-pixel-art-for-tower-defense/Goblin/S_Walk.png" id="5_88ohq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_84mmv"]
 texture = ExtResource("1_xsk5q")
@@ -228,6 +232,150 @@ sources/0 = SubResource("TileSetAtlasSource_84mmv")
 sources/1 = SubResource("TileSetAtlasSource_2iigg")
 sources/2 = SubResource("TileSetAtlasSource_0u3dj")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1fyh"]
+atlas = ExtResource("3_v6mol")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11ty4"]
+atlas = ExtResource("3_v6mol")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d3jnv"]
+atlas = ExtResource("3_v6mol")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8h641"]
+atlas = ExtResource("3_v6mol")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0iiag"]
+atlas = ExtResource("3_v6mol")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdjrc"]
+atlas = ExtResource("3_v6mol")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6867"]
+atlas = ExtResource("4_76oik")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1n48k"]
+atlas = ExtResource("4_76oik")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56tp5"]
+atlas = ExtResource("4_76oik")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7unvg"]
+atlas = ExtResource("4_76oik")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cf3t"]
+atlas = ExtResource("4_76oik")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgac3"]
+atlas = ExtResource("4_76oik")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7tb7"]
+atlas = ExtResource("5_88ohq")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyf67"]
+atlas = ExtResource("5_88ohq")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_myxuv"]
+atlas = ExtResource("5_88ohq")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s03ii"]
+atlas = ExtResource("5_88ohq")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txomt"]
+atlas = ExtResource("5_88ohq")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_332bt"]
+atlas = ExtResource("5_88ohq")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mmxt5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1fyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11ty4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3jnv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8h641")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0iiag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdjrc")
+}],
+"loop": true,
+"name": &"back_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6867")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1n48k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56tp5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7unvg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cf3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgac3")
+}],
+"loop": true,
+"name": &"front_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7tb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xyf67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myxuv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s03ii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txomt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_332bt")
+}],
+"loop": true,
+"name": &"side_walk",
+"speed": 5.0
+}]
+
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 
@@ -247,3 +395,25 @@ layer_1/tile_data = PackedInt32Array(589826, 2, 1, 786438, 2, 1, 1114123, 2, 1, 
 
 [node name="player" parent="." instance=ExtResource("4_dqyoa")]
 position = Vector2(21, 70)
+
+[node name="enemy" parent="." node_paths=PackedStringArray("_waypoints", "_attackTimer", "_player") instance=ExtResource("2_e1781")]
+position = Vector2(456, 176)
+_waypoints = [NodePath("../waypoint-1"), NodePath("../waypoint-2"), NodePath("../waypoint-3"), NodePath("../waypoint-4")]
+_attackTimer = NodePath("Timer")
+_Enemy_Frames = SubResource("SpriteFrames_mmxt5")
+_player = NodePath("../player")
+
+[node name="Timer" type="Timer" parent="enemy"]
+autostart = true
+
+[node name="waypoint-1" type="Node2D" parent="."]
+position = Vector2(496, 288)
+
+[node name="waypoint-2" type="Node2D" parent="."]
+position = Vector2(496, 216)
+
+[node name="waypoint-3" type="Node2D" parent="."]
+position = Vector2(568, 216)
+
+[node name="waypoint-4" type="Node2D" parent="."]
+position = Vector2(568, 288)
