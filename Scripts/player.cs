@@ -10,7 +10,7 @@ public partial class player : CharacterBody2D
     public override void _Ready()
     {
         anim = GetNode<AnimatedSprite2D>("AnimatedSprite2D");
-        anim.Play("idle");
+        anim.Play("front_idle");
     }
 
     [Export]

@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://bpionn3tlj8gu"]
+
+[ext_resource type="Script" path="res://Scripts/enemy.cs" id="1_v82rr"]
+[ext_resource type="Texture2D" uid="uid://bi0x4str1tkcm" path="res://Art/sprites/characters/slime.png" id="2_yfovx"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3lpyk"]
+radius = 6.0
+height = 20.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lud7k"]
+atlas = ExtResource("2_yfovx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_heu1i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lud7k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="enemy" type="CharacterBody2D" node_paths=PackedStringArray("_waypoints", "_enemy", "_Enemy_Sprites")]
+script = ExtResource("1_v82rr")
+_waypoints = []
+_enemy = NodePath(".")
+_Enemy_Sprites = NodePath("AnimatedSprite2D")
+_max_health = 10
+_health = 10
+_speed = 0.04
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_3lpyk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_heu1i")
