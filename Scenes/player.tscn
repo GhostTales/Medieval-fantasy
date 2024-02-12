@@ -305,8 +305,8 @@ shape = SubResource("CapsuleShape2D_ka724")
 zoom = Vector2(3, 3)
 limit_left = 0
 limit_top = 16
-limit_right = 1070
-limit_bottom = 543
+limit_right = 1327
+limit_bottom = 781
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
