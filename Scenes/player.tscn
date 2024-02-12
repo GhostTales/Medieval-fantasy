@@ -1,7 +1,8 @@
-[gd_scene load_steps=41 format=3 uid="uid://elv0mfr0otff"]
+[gd_scene load_steps=43 format=3 uid="uid://elv0mfr0otff"]
 
 [ext_resource type="Script" path="res://Scripts/player.cs" id="1_qfebv"]
-[ext_resource type="Texture2D" uid="uid://dy5sv041bgrl8" path="res://Art/sprites/characters/player.png" id="2_ceveq"]
+[ext_resource type="Texture2D" uid="uid://bvof2fn7j4u1n" path="res://Art/sprites/characters/player.png" id="2_ceveq"]
+[ext_resource type="Script" path="res://Scripts/PlayerAttackArea.cs" id="3_62b5v"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ka724"]
 radius = 5.0
@@ -292,6 +293,9 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_slc7c"]
+height = 36.0
+
 [node name="player" type="CharacterBody2D"]
 y_sort_enabled = true
 script = ExtResource("1_qfebv")
@@ -314,3 +318,13 @@ drag_vertical_enabled = true
 position = Vector2(0, -15)
 sprite_frames = SubResource("SpriteFrames_rmbc5")
 animation = &"back_idle"
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_62b5v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -15)
+shape = SubResource("CapsuleShape2D_slc7c")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

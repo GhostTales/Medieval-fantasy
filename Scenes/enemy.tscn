@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dmup14dtjfxig"]
+[gd_scene load_steps=6 format=3 uid="uid://bpionn3tlj8gu"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.cs" id="1_v82rr"]
-[ext_resource type="Texture2D" uid="uid://dfycjym4caucy" path="res://Art/sprites/characters/slime.png" id="2_yfovx"]
+[ext_resource type="Texture2D" uid="uid://bi0x4str1tkcm" path="res://Art/sprites/characters/slime.png" id="2_yfovx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3lpyk"]
 radius = 6.0
@@ -29,7 +29,9 @@ _enemy = NodePath(".")
 _Enemy_Sprites = NodePath("AnimatedSprite2D")
 _max_health = 10
 _health = 10
+_Damage = 5
 _speed = 0.04
+metadata/enemy = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_3lpyk")
