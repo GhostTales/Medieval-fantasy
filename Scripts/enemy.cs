@@ -23,9 +23,12 @@ public partial class enemy : BehaviorTree.Tree
 	[Export]
 	int _health;
 	[Export]
+	int _Damage;
+	[Export]
 	float _speed;
 
 	int _chase_range = 100;
+	int _attack_range = 15;
 	protected override BtNode SetupTree()
 	{
 
@@ -44,8 +47,8 @@ public partial class enemy : BehaviorTree.Tree
 
 					new Sequence(new List<BtNode>
 					{
-						new TaskAttackDist(_enemy, _player, 25),
-						new TaskAttack(_enemy, _player, _attackTimer)
+						new TaskAttackDist(_enemy, _player, _attack_range),
+						new TaskAttack(_enemy, _player, _attackTimer, _Damage)
 					}),
 
 					new Sequence(new List<BtNode>
