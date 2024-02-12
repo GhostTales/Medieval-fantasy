@@ -5,8 +5,8 @@
 [ext_resource type="Script" path="res://Scripts/PlayerAttackArea.cs" id="3_62b5v"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ka724"]
-radius = 5.0
-height = 10.0
+radius = 4.0
+height = 8.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gbev2"]
 atlas = ExtResource("2_ceveq")
@@ -301,9 +301,13 @@ y_sort_enabled = true
 script = ExtResource("1_qfebv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-y_sort_enabled = true
-position = Vector2(0, -2)
+position = Vector2(0, -3)
 shape = SubResource("CapsuleShape2D_ka724")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -15)
+sprite_frames = SubResource("SpriteFrames_rmbc5")
+animation = &"back_idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
@@ -313,11 +317,6 @@ limit_right = 1327
 limit_bottom = 781
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -15)
-sprite_frames = SubResource("SpriteFrames_rmbc5")
-animation = &"back_idle"
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("3_62b5v")
