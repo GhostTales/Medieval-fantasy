@@ -12,5 +12,6 @@ namespace playerstats
 		public static int Damage = 15; // damage per hit
 		public static int Armour = 0; // damage reduction
 		public static bool Damage_immunity = false;
+		public static float delta;
 	}
 }

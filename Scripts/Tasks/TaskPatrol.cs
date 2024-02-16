@@ -1,5 +1,6 @@
 using BehaviorTree;
 using Godot;
+using playerstats;
 using System;
 
 public partial class TaskPatrol : BtNode
@@ -24,7 +25,7 @@ public partial class TaskPatrol : BtNode
 		//GD.Print(Enemy);
 		var moveDirection = (target.Position - Enemy.Position).Normalized();
 		//GD.Print("test2");
-		Enemy.Position += moveDirection * Speed;
+		Enemy.Position += moveDirection * Speed * player_stats.delta;
 
 		//Enemy.Velocity = moveDirection * Speed;
 		//GD.Print("test3");

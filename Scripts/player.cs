@@ -49,10 +49,6 @@ public partial class player : CharacterBody2D
 		}
 		else
 			PlayAnimation(0);
-
-
-
-
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -61,7 +57,7 @@ public partial class player : CharacterBody2D
 		MoveAndSlide(); // Flytter sig i henhold fysikkens kræfter og glider af kolliderende Objekter
 
 		Move_Rigidbody(10);
-
+		player_stats.delta = (float)delta;
 	}
 
 

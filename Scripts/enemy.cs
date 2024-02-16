@@ -3,6 +3,7 @@ using System;
 
 using BehaviorTree;
 using System.Collections.Generic;
+using playerstats;
 
 public partial class enemy : BehaviorTree.Tree
 {
@@ -31,7 +32,6 @@ public partial class enemy : BehaviorTree.Tree
 	int _attack_range = 15;
 	protected override BtNode SetupTree()
 	{
-
 		BtNode root = new Sequence(new List<BtNode>
 		{
 			new TaskAnimateSprite(_Enemy_Sprites, _Enemy_Frames, _enemy, _player, _waypoints, _chase_range),

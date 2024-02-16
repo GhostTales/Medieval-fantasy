@@ -1,5 +1,6 @@
 using BehaviorTree;
 using Godot;
+using playerstats;
 using System;
 
 public partial class TaskFlee : BtNode
@@ -18,7 +19,7 @@ public partial class TaskFlee : BtNode
 	public override NodeState Evaluate()
 	{
 		var moveDirection = -(Player.Position - Enemy.Position).Normalized();
-		Enemy.Position += moveDirection * Speed;
+		Enemy.Position += moveDirection * Speed * player_stats.delta;
 
 		//Enemy.Velocity = moveDirection * Speed;
 		//Enemy.MoveAndSlide();
