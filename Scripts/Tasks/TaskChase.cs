@@ -18,7 +18,6 @@ public partial class TaskChase : BtNode
 
 	public override NodeState Evaluate()
 	{
-		GD.Print(speed);
 		var moveDirection = (player.Position - enemy.Position).Normalized();
 		enemy.Position += moveDirection * speed * player_stats.delta;
 

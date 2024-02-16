@@ -16,7 +16,7 @@ _Enemy_Sprites = NodePath("AnimatedSprite2D")
 _Enemy_Frames = ExtResource("2_bthwj")
 _max_health = 10
 _health = 10
-_speed = 25.0
+_speed = 4.0
 metadata/enemy = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
