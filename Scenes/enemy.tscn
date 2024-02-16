@@ -16,7 +16,6 @@ _Enemy_Sprites = NodePath("AnimatedSprite2D")
 _Enemy_Frames = ExtResource("2_bthwj")
 _max_health = 10
 _health = 10
-_Damage = 5
 _speed = 0.04
 metadata/enemy = true
 
