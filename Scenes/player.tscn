@@ -300,6 +300,11 @@ height = 36.0
 y_sort_enabled = true
 script = ExtResource("1_qfebv")
 
+[node name="Damage_Iframes" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 2.0
+one_shot = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 y_sort_enabled = true
 position = Vector2(0, -2)

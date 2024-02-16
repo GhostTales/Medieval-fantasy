@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://clufwlbupmudw"]
+[gd_scene load_steps=34 format=3 uid="uid://clufwlbupmudw"]
 
 [ext_resource type="Texture2D" uid="uid://b2fkfod2fgrm0" path="res://Art/sprites/tilesets/plains.png" id="1_xsk5q"]
 [ext_resource type="Texture2D" uid="uid://r3bfunvx4p2k" path="res://Art/sprites/tilesets/grass.png" id="2_aculb"]
@@ -305,7 +305,154 @@ region = Rect2(192, 0, 48, 48)
 atlas = ExtResource("5_88ohq")
 region = Rect2(240, 0, 48, 48)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_mmxt5"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_nx5o6"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1fyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11ty4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3jnv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8h641")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0iiag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdjrc")
+}],
+"loop": true,
+"name": &"back_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6867")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1n48k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56tp5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7unvg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cf3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgac3")
+}],
+"loop": true,
+"name": &"front_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7tb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xyf67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myxuv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s03ii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txomt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_332bt")
+}],
+"loop": true,
+"name": &"side_walk",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dhyt0"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1fyh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11ty4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d3jnv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8h641")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0iiag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vdjrc")
+}],
+"loop": true,
+"name": &"back_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6867")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1n48k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56tp5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7unvg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cf3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgac3")
+}],
+"loop": true,
+"name": &"front_walk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7tb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xyf67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_myxuv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s03ii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txomt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_332bt")
+}],
+"loop": true,
+"name": &"side_walk",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5wwem"]
+resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -397,16 +544,7 @@ layer_1/tile_data = PackedInt32Array(65593, 2, 5, 262204, 2, 5, 65597, 2, 5, 131
 [node name="player" parent="." instance=ExtResource("4_dqyoa")]
 position = Vector2(21, 70)
 
-[node name="Timer" type="Timer" parent="player"]
-
-[node name="enemy" parent="." node_paths=PackedStringArray("_waypoints", "_attackTimer", "_player") instance=ExtResource("2_e1781")]
-position = Vector2(1011, 403)
-_waypoints = [NodePath("../waypoint-1"), NodePath("../waypoint-2"), NodePath("../waypoint-3"), NodePath("../waypoint-4")]
-_attackTimer = NodePath("Timer")
-_Enemy_Frames = SubResource("SpriteFrames_mmxt5")
-_player = NodePath("../player")
-
-[node name="Timer" type="Timer" parent="enemy"]
+[node name="regen" type="Timer" parent="player"]
 autostart = true
 
 [node name="waypoint-1" type="Node2D" parent="."]
@@ -421,4 +559,28 @@ position = Vector2(1047, 368)
 [node name="waypoint-4" type="Node2D" parent="."]
 position = Vector2(1052, 445)
 
-[connection signal="timeout" from="player/Timer" to="player" method="_on_timer_timeout"]
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="enemy" parent="Node2D" node_paths=PackedStringArray("_waypoints", "_player") instance=ExtResource("2_e1781")]
+position = Vector2(1011, 404)
+_waypoints = [NodePath("../../waypoint-1"), NodePath("../../waypoint-2"), NodePath("../../waypoint-3"), NodePath("../../waypoint-4")]
+_Enemy_Frames = SubResource("SpriteFrames_nx5o6")
+_player = NodePath("../../player")
+
+[node name="Node2D2" type="Node2D" parent="."]
+
+[node name="enemy2" parent="Node2D2" node_paths=PackedStringArray("_waypoints", "_player") instance=ExtResource("2_e1781")]
+position = Vector2(1032, 384)
+_waypoints = [NodePath("../../waypoint-1"), NodePath("../../waypoint-2"), NodePath("../../waypoint-3"), NodePath("../../waypoint-4")]
+_Enemy_Frames = SubResource("SpriteFrames_dhyt0")
+_player = NodePath("../../player")
+
+[node name="Node2D3" type="Node2D" parent="."]
+
+[node name="enemy3" parent="Node2D3" node_paths=PackedStringArray("_waypoints", "_player") instance=ExtResource("2_e1781")]
+position = Vector2(1041, 428)
+_waypoints = [NodePath("../../waypoint-1"), NodePath("../../waypoint-2"), NodePath("../../waypoint-3"), NodePath("../../waypoint-4")]
+_Enemy_Frames = SubResource("SpriteFrames_5wwem")
+_player = NodePath("../../player")
+
+[connection signal="timeout" from="player/regen" to="player" method="_on_timer_timeout"]
