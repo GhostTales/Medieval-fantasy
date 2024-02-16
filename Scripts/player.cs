@@ -57,6 +57,10 @@ public partial class player : CharacterBody2D
 		MoveAndSlide(); // Flytter sig i henhold fysikkens kræfter og glider af kolliderende Objekter
 
 		Move_Rigidbody(10);
+	}
+
+	public override void _Process(double delta)
+	{
 		player_stats.delta = (float)delta;
 	}
 
