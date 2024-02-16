@@ -1,8 +1,8 @@
-[gd_resource type="SpriteFrames" load_steps=22 format=3 uid="uid://s72vme3qgpd4"]
+[gd_resource type="SpriteFrames" load_steps=22 format=3 uid="uid://chekwpef6kfq4"]
 
-[ext_resource type="Texture2D" uid="uid://bo0xvjp5vvrr" path="res://Art/sprites/characters/free-field-enemies-pixel-art-for-tower-defense/Goblin/U_Walk.png" id="1_8i77r"]
-[ext_resource type="Texture2D" uid="uid://thlxe38x2865" path="res://Art/sprites/characters/free-field-enemies-pixel-art-for-tower-defense/Goblin/D_Walk.png" id="2_18xpn"]
-[ext_resource type="Texture2D" uid="uid://d2pw2m6ohrfmk" path="res://Art/sprites/characters/free-field-enemies-pixel-art-for-tower-defense/Goblin/S_Walk.png" id="3_h3eto"]
+[ext_resource type="Texture2D" uid="uid://b2oyta3gphny6" path="res://Art/sprites/characters/free-field-enemies-pixel-art-for-tower-defense/Goblin/U_Walk.png" id="1_8i77r"]
+[ext_resource type="Texture2D" uid="uid://ckffa08baq3lg" path="res://Art/sprites/characters/free-field-enemies-pixel-art-for-tower-defense/Goblin/D_Walk.png" id="2_18xpn"]
+[ext_resource type="Texture2D" uid="uid://d4jmsax0eef4r" path="res://Art/sprites/characters/free-field-enemies-pixel-art-for-tower-defense/Goblin/S_Walk.png" id="3_h3eto"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c1fyh"]
 atlas = ExtResource("1_8i77r")
