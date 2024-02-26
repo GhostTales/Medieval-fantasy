@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpionn3tlj8gu"]
+[gd_scene load_steps=4 format=3 uid="uid://dmup14dtjfxig"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.cs" id="1_v82rr"]
-[ext_resource type="SpriteFrames" uid="uid://s72vme3qgpd4" path="res://Scenes/goblin.tres" id="2_bthwj"]
+[ext_resource type="SpriteFrames" uid="uid://chekwpef6kfq4" path="res://Scenes/goblin.tres" id="2_bthwj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3lpyk"]
 radius = 6.0
