@@ -38,8 +38,8 @@ public partial class TaskAttack : BtNode
 
 				damage_timer.Start();
 			}
-			GD.Print($"{transform} attacked {player} | player health: {player_stats.Health}/{player_stats.Max_Health}");
-			GD.Print($"{player_stats.Damage_immunity} | {damage_timer.TimeLeft}");
+			//GD.Print($"{transform} attacked {player} | player health: {player_stats.Health}/{player_stats.Max_Health}");
+			//GD.Print($"{player_stats.Damage_immunity} | {damage_timer.TimeLeft}");
 
 		}
 	}

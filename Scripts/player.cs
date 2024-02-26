@@ -125,7 +125,7 @@ public partial class player : CharacterBody2D
 
 			if (player_stats.Health > player_stats.Max_Health)
 				player_stats.Health = player_stats.Max_Health;
-			GD.Print(player_stats.Health);
+			//GD.Print(player_stats.Health);
 		}
 	}
 }

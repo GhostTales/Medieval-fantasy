@@ -22,7 +22,7 @@ public partial class enemy : BehaviorTree.Tree
 	[Export]
 	int _max_health;
 	[Export]
-	int _health;
+	public int _health { get; set; }
 	[Export]
 	int _Damage;
 	[Export]
@@ -34,6 +34,11 @@ public partial class enemy : BehaviorTree.Tree
 	{
 		BtNode root = new Sequence(new List<BtNode>
 		{
+			new Selector(new List<BtNode>{
+				new TaskZeroHealth(_enemy),
+				new TaskDeath(_enemy)
+				}),
+
 			new TaskAnimateSprite(_Enemy_Sprites, _Enemy_Frames, _enemy, _player, _waypoints, _chase_range),
 
 			new Selector(new List<BtNode>
@@ -62,4 +67,6 @@ public partial class enemy : BehaviorTree.Tree
 		});
 		return root;
 	}
+
+	public void Damage(int damage) => _health -= damage;
 }

@@ -1,4 +1,5 @@
 using Godot;
+using playerstats;
 using System;
 using System.Collections.Generic;
 
@@ -15,10 +16,22 @@ public partial class PlayerAttackArea : Area2D
 	public override void _Process(double delta)
 	{
 
-		if (_overlapping.Count > 0)
-			foreach (var item in _overlapping)
-				GD.Print(item);
+	}
 
+	public override void _Input(InputEvent @event)
+	{
+		if (@event is InputEventMouseButton eventMouseButton)
+		{
+			if (eventMouseButton.ButtonIndex == MouseButton.Left)
+			{
+				if (_overlapping.Count > 0)
+					foreach (var item in _overlapping)
+					{
+						GD.Print((item as enemy)._health);
+						(item as enemy).Damage(player_stats.Damage);
+					}
+			}
+		}
 	}
 
 	private void _on_body_entered(Node2D body)
