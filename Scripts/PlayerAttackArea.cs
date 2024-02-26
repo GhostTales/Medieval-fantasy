@@ -27,7 +27,7 @@ public partial class PlayerAttackArea : Area2D
 				if (_overlapping.Count > 0)
 					foreach (var item in _overlapping)
 					{
-						GD.Print((item as enemy)._health);
+						//GD.Print((item as enemy)._health);
 						(item as enemy).Damage(player_stats.Damage);
 					}
 			}

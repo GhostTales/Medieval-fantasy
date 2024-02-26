@@ -17,7 +17,7 @@ public partial class TaskZeroHealth : BtNode
 
         if (health > 0)
         {
-            GD.Print($"die {health}");
+            //GD.Print($"die {health}");
             return NodeState.SUCCESS;
         }
         return NodeState.FAILURE;

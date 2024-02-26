@@ -13,7 +13,7 @@ public partial class TaskDeath : BtNode
 
     public override NodeState Evaluate()
     {
-        GD.Print($"{Enemy} has been freed");
+        //GD.Print($"{Enemy} has been freed");
         Enemy.GetParent().Free();
 
         return NodeState.RUNNING;
