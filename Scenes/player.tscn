@@ -1,7 +1,8 @@
-[gd_scene load_steps=55 format=3 uid="uid://elv0mfr0otff"]
+[gd_scene load_steps=56 format=3 uid="uid://elv0mfr0otff"]
 
 [ext_resource type="Script" path="res://Scripts/player.cs" id="1_qfebv"]
-[ext_resource type="Texture2D" uid="uid://dy5sv041bgrl8" path="res://Art/sprites/characters/player.png" id="2_ceveq"]
+[ext_resource type="Texture2D" uid="uid://bvof2fn7j4u1n" path="res://Art/sprites/characters/player.png" id="2_ceveq"]
+[ext_resource type="PackedScene" uid="uid://cyd7c1mu05ekh" path="res://Scenes/hud.tscn" id="2_lslin"]
 [ext_resource type="Script" path="res://Scripts/PlayerAttackArea.cs" id="3_62b5v"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ka724"]
@@ -421,6 +422,8 @@ limit_right = 1327
 limit_bottom = 781
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
+
+[node name="Hud" parent="Camera2D" instance=ExtResource("2_lslin")]
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("3_62b5v")

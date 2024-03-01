@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://cyd7c1mu05ekh"]
+
+[ext_resource type="Texture2D" uid="uid://bofu285t5lbui" path="res://Art/sprites/objects/kort stor gsbg.png" id="1_i0qfs"]
+[ext_resource type="Script" path="res://Scripts/HUD/KortStorGsbg.cs" id="2_0v66x"]
+[ext_resource type="Texture2D" uid="uid://dl376yscxbd7g" path="res://Art/sprites/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/ProgressBar/Background.png" id="2_vkb2r"]
+[ext_resource type="Texture2D" uid="uid://dkxc0h6ahykst" path="res://Art/sprites/Prinbles_GUI_Asset_Silent (1.0.0)/asset/png/ProgressBar/VLine.png" id="3_kism7"]
+[ext_resource type="Script" path="res://Scripts/HUD/Healthbar.cs" id="5_7e3jr"]
+
+[node name="Hud" type="CanvasLayer"]
+
+[node name="KortStorGsbg" type="Sprite2D" parent="."]
+position = Vector2(1017.5, 133.5)
+scale = Vector2(1.96094, 1.96094)
+texture = ExtResource("1_i0qfs")
+script = ExtResource("2_0v66x")
+
+[node name="Healthbar" type="TextureProgressBar" parent="."]
+offset_left = 22.0
+offset_top = 595.0
+offset_right = 310.0
+offset_bottom = 632.0
+nine_patch_stretch = true
+stretch_margin_bottom = 7
+texture_under = ExtResource("2_vkb2r")
+texture_progress = ExtResource("3_kism7")
+script = ExtResource("5_7e3jr")
+
+[node name="Label" type="Label" parent="Healthbar"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 4.0
+offset_right = 172.0
+offset_bottom = 30.0
+text = "0 / 100"
