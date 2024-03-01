@@ -1,4 +1,5 @@
 using Godot;
+using playerstats;
 using System;
 
 public partial class KortStorGsbg : Sprite2D
@@ -6,12 +7,7 @@ public partial class KortStorGsbg : Sprite2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-
+		this.Visible = false;
 	}
 
 	public override void _Input(InputEvent @event)
@@ -20,9 +16,12 @@ public partial class KortStorGsbg : Sprite2D
 		{
 			if (keyEvent.Keycode == Key.M)
 			{
-				if (this.Visible)
-					this.Visible = false;
-				else this.Visible = true;
+				if (player_stats.map_unlocked)
+				{
+					if (this.Visible)
+						this.Visible = false;
+					else this.Visible = true;
+				}
 			}
 		}
 	}

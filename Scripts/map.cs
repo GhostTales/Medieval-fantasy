@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Godot;
 using System;
+using playerstats;
 
 public partial class map : Node2D
 {
@@ -24,7 +25,8 @@ public partial class map : Node2D
 	{
 		//GD.Print(body.Name);
 		if (body.Name == "player" && this.Visible)
-			QueueFree();
+			player_stats.map_unlocked = true;
+		QueueFree();
 	}
 
 	public bool check_tree(Node tree)
