@@ -7,7 +7,7 @@ using playerstats;
 public partial class player : CharacterBody2D
 {
 	AnimatedSprite2D anim;
-	Vector2 current_dir = new Vector2(0, 0); // Vi gemmer retning her
+	Vector2 current_dir { get; set; } = new Vector2(0, 0); // Vi gemmer retning her
 	Area2D AttackArea;
 
 	public override void _Ready()
@@ -68,40 +68,20 @@ public partial class player : CharacterBody2D
 
 	public void PlayAnimation(int movement)
 	{
+		AttackArea.Rotation = Mathf.Atan2(current_dir.X, -current_dir.Y);
 
-		Vector2 dir = current_dir;
+		if (!anim.Animation.ToString().Contains("attack"))
+		{
+			if (current_dir == Vector2.Left || current_dir == Vector2.Right)
+			{
+				anim.FlipH = current_dir.X < 0;
+				anim.Play("side_" + (movement == 1 ? "walk" : "idle"));
+			}
+			else if (current_dir == Vector2.Up)
+				anim.Play("back_" + (movement == 1 ? "walk" : "idle"));
 
-		AttackArea.Rotation = Mathf.Atan2(dir.X, -dir.Y);
-
-		if (dir == new Vector2(1, 0))
-		{
-			anim.FlipH = false;
-			if (movement == 1)
-				anim.Play("side_walk");
-			else if (movement == 0)
-				anim.Play("side_idle");
-		}
-		else if (dir == new Vector2(-1, 0))
-		{
-			anim.FlipH = true;
-			if (movement == 1)
-				anim.Play("side_walk");
-			else if (movement == 0)
-				anim.Play("side_idle");
-		}
-		else if (dir == new Vector2(0, -1))
-		{
-			if (movement == 1)
-				anim.Play("back_walk");
-			else if (movement == 0)
-				anim.Play("back_idle");
-		}
-		else if (dir == new Vector2(0, 1))
-		{
-			if (movement == 1)
-				anim.Play("front_walk");
-			else if (movement == 0)
-				anim.Play("front_idle");
+			else if (current_dir == Vector2.Down)
+				anim.Play("front_" + (movement == 1 ? "walk" : "idle"));
 		}
 	}
 

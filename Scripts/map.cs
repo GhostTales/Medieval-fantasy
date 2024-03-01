@@ -22,21 +22,24 @@ public partial class map : Node2D
 
 	private void _on_area_2d_body_entered(Node2D body)
 	{
-		//GD.Print(body.Name);
-		if (body.Name == "player")
+		GD.Print(body.Name);
+		if (body.Name == "player" && this.Visible)
 			QueueFree();
 	}
 
 	public bool check_tree(Node tree)
 	{
 		foreach (var item in tree.GetChildren())
+		{
 			foreach (var item2 in item.GetChildren())
+			{
 				if (item2.Name == "enemy")
 				{
-					this.Position = (item2 as Node2D).Position;
+					this.Position = (item2 as Node2D).Position * 1.02f;
 					return true;
 				}
-
+			}
+		}
 
 		return false;
 	}
