@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dkw7j3pmsc2th"]
 
 [ext_resource type="Script" path="res://Scripts/map.cs" id="1_6buin"]
-[ext_resource type="Texture2D" uid="uid://bcaohwyg51jqv" path="res://Art/sprites/objects/kort.png" id="1_xmo2j"]
+[ext_resource type="Texture2D" uid="uid://bvttb1fckvgqi" path="res://Art/sprites/objects/kort-gsbg.png" id="2_14hcb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_50jmx"]
 
@@ -10,7 +10,7 @@ script = ExtResource("1_6buin")
 
 [node name="Kort" type="Sprite2D" parent="."]
 scale = Vector2(0.395833, 0.395833)
-texture = ExtResource("1_xmo2j")
+texture = ExtResource("2_14hcb")
 
 [node name="Area2D" type="Area2D" parent="."]
 
