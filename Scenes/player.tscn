@@ -1,7 +1,7 @@
 [gd_scene load_steps=55 format=3 uid="uid://elv0mfr0otff"]
 
 [ext_resource type="Script" path="res://Scripts/player.cs" id="1_qfebv"]
-[ext_resource type="Texture2D" uid="uid://bvof2fn7j4u1n" path="res://Art/sprites/characters/player.png" id="2_ceveq"]
+[ext_resource type="Texture2D" uid="uid://dy5sv041bgrl8" path="res://Art/sprites/characters/player.png" id="2_ceveq"]
 [ext_resource type="Script" path="res://Scripts/PlayerAttackArea.cs" id="3_62b5v"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ka724"]
