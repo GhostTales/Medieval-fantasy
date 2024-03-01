@@ -22,7 +22,7 @@ public partial class map : Node2D
 
 	private void _on_area_2d_body_entered(Node2D body)
 	{
-		GD.Print(body.Name);
+		//GD.Print(body.Name);
 		if (body.Name == "player")
 			QueueFree();
 	}
@@ -32,7 +32,11 @@ public partial class map : Node2D
 		foreach (var item in tree.GetChildren())
 			foreach (var item2 in item.GetChildren())
 				if (item2.Name == "enemy")
+				{
+					this.Position = (item2 as Node2D).Position;
 					return true;
+				}
+
 
 		return false;
 	}
