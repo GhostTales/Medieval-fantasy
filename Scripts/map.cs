@@ -22,7 +22,7 @@ public partial class map : Node2D
 
 	private void _on_area_2d_body_entered(Node2D body)
 	{
-		GD.Print(body.Name);
+		//GD.Print(body.Name);
 		if (body.Name == "player" && this.Visible)
 			QueueFree();
 	}
