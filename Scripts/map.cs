@@ -25,8 +25,10 @@ public partial class map : Node2D
 	{
 		//GD.Print(body.Name);
 		if (body.Name == "player" && this.Visible)
+		{
 			player_stats.map_unlocked = true;
-		QueueFree();
+			QueueFree();
+		}
 	}
 
 	public bool check_tree(Node tree)
@@ -37,7 +39,7 @@ public partial class map : Node2D
 			{
 				if (item2.Name == "enemy")
 				{
-					this.Position = (item2 as Node2D).Position * 1.02f;
+					this.Position = (item2 as Node2D).Position * 1.05f;
 					return true;
 				}
 			}
