@@ -1,8 +1,8 @@
 [gd_scene load_steps=56 format=3 uid="uid://elv0mfr0otff"]
 
 [ext_resource type="Script" path="res://Scripts/player.cs" id="1_qfebv"]
-[ext_resource type="Texture2D" uid="uid://dy5sv041bgrl8" path="res://Art/sprites/characters/player.png" id="2_ceveq"]
-[ext_resource type="PackedScene" path="res://Scenes/hud.tscn" id="2_lslin"]
+[ext_resource type="Texture2D" uid="uid://bvof2fn7j4u1n" path="res://Art/sprites/characters/player.png" id="2_ceveq"]
+[ext_resource type="PackedScene" uid="uid://cyd7c1mu05ekh" path="res://Scenes/hud.tscn" id="2_lslin"]
 [ext_resource type="Script" path="res://Scripts/PlayerAttackArea.cs" id="3_62b5v"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ka724"]
@@ -399,10 +399,11 @@ height = 36.0
 [node name="player" type="CharacterBody2D"]
 y_sort_enabled = true
 script = ExtResource("1_qfebv")
+Damage = 3
 
 [node name="Damage_Iframes" type="Timer" parent="."]
 unique_name_in_owner = true
-wait_time = 2.0
+wait_time = 0.5
 one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

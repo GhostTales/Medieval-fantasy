@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://yg4dhh0ddxj4"]
 
 [ext_resource type="Script" path="res://Scripts/map.cs" id="1_6buin"]
-[ext_resource type="Texture2D" uid="uid://dydh2kn3sf5lu" path="res://Art/sprites/objects/kort-gsbg.png" id="2_14hcb"]
+[ext_resource type="Texture2D" uid="uid://bvttb1fckvgqi" path="res://Art/sprites/objects/kort-gsbg.png" id="2_14hcb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_50jmx"]
 radius = 6.0
