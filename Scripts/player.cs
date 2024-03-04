@@ -7,7 +7,7 @@ using playerstats;
 public partial class player : CharacterBody2D
 {
 	AnimatedSprite2D anim;
-	Vector2 current_dir { get; set; } = new Vector2(0, 0); // Vi gemmer retning her
+	Vector2 current_dir = new Vector2(0, 0); // Vi gemmer retning her
 	Area2D AttackArea;
 
 	public override void _Ready()
@@ -24,17 +24,17 @@ public partial class player : CharacterBody2D
 	}
 
 	[Export]
-	public int Speed = 100;    // Hastighed, redigerbar fra Inspector (ved Export)
+	public int Speed;    // Hastighed, redigerbar fra Inspector (ved Export)
 	[Export]
-	public int Health = 25;
+	public int Health;
 	[Export]
-	public int Max_Health = 25;
+	public int Max_Health;
 	[Export]
-	public int Health_Regen = 2;
+	public int Health_Regen;
 	[Export]
-	public int Damage = 5;
+	public int Damage;
 	[Export]
-	public int Armour = 0;
+	public int Armour;
 
 
 	public void GetInput()
@@ -53,8 +53,17 @@ public partial class player : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
+
 		GetInput();     // Henter Player keyboard input
-		MoveAndSlide(); // Flytter sig i henhold fysikkens kræfter og glider af kolliderende Objekter
+
+		if (player_stats.Health > 0)
+			MoveAndSlide(); // Flytter sig i henhold fysikkens kræfter og glider af kolliderende Objekter
+
+		if (player_stats.Health <= 0 && player_stats.IsAlive)
+		{
+			anim.Play("death");
+			player_stats.IsAlive = false;
+		}
 
 		Move_Rigidbody(10);
 	}
@@ -70,7 +79,7 @@ public partial class player : CharacterBody2D
 	{
 		AttackArea.Rotation = Mathf.Atan2(current_dir.X, -current_dir.Y);
 
-		if (!anim.Animation.ToString().Contains("attack"))
+		if (!anim.Animation.ToString().Contains("attack") && player_stats.IsAlive)
 		{
 			if (current_dir == Vector2.Left || current_dir == Vector2.Right)
 			{
@@ -99,13 +108,13 @@ public partial class player : CharacterBody2D
 
 	public void _on_timer_timeout()
 	{
-		if (player_stats.Health < player_stats.Max_Health)
-		{
+		if (player_stats.Health < player_stats.Max_Health && player_stats.Health > 0)
 			player_stats.Health += player_stats.Health_Regen;
 
-			if (player_stats.Health > player_stats.Max_Health)
-				player_stats.Health = player_stats.Max_Health;
-			//GD.Print(player_stats.Health);
-		}
+		if (player_stats.Health > player_stats.Max_Health)
+			player_stats.Health = player_stats.Max_Health;
+
+		if (player_stats.Health < 0)
+			player_stats.Health = 0;
 	}
 }

@@ -27,7 +27,7 @@ public partial class PlayerAttackArea : Area2D
 
 	public override void _Input(InputEvent @event)
 	{
-		if (@event is InputEventMouseButton eventMouseButton && !anim.Animation.ToString().Contains("attack"))
+		if (@event is InputEventMouseButton eventMouseButton && !anim.Animation.ToString().Contains("attack") && player_stats.IsAlive)
 		{
 			if (eventMouseButton.ButtonIndex == MouseButton.Left)
 			{
@@ -60,7 +60,8 @@ public partial class PlayerAttackArea : Area2D
 	}
 	private void _on_animated_sprite_2d_animation_finished()
 	{
-		anim.Play("front_idle");
+		if (player_stats.IsAlive)
+			anim.Play("front_idle");
 	}
 
 	private void _on_body_entered(Node2D body)

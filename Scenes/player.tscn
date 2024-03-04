@@ -1,8 +1,8 @@
-[gd_scene load_steps=56 format=3 uid="uid://elv0mfr0otff"]
+[gd_scene load_steps=59 format=3 uid="uid://elv0mfr0otff"]
 
 [ext_resource type="Script" path="res://Scripts/player.cs" id="1_qfebv"]
-[ext_resource type="Texture2D" uid="uid://dy5sv041bgrl8" path="res://Art/sprites/characters/player.png" id="2_ceveq"]
-[ext_resource type="PackedScene" path="res://Scenes/hud.tscn" id="2_lslin"]
+[ext_resource type="Texture2D" uid="uid://bvof2fn7j4u1n" path="res://Art/sprites/characters/player.png" id="2_ceveq"]
+[ext_resource type="PackedScene" uid="uid://cyd7c1mu05ekh" path="res://Scenes/hud.tscn" id="2_lslin"]
 [ext_resource type="Script" path="res://Scripts/PlayerAttackArea.cs" id="3_62b5v"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ka724"]
@@ -72,6 +72,18 @@ region = Rect2(192, 240, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_032hs"]
 atlas = ExtResource("2_ceveq")
 region = Rect2(240, 240, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urtuh"]
+atlas = ExtResource("2_ceveq")
+region = Rect2(0, 432, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4spfl"]
+atlas = ExtResource("2_ceveq")
+region = Rect2(48, 432, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5m5y3"]
+atlas = ExtResource("2_ceveq")
+region = Rect2(96, 432, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kxnvq"]
 atlas = ExtResource("2_ceveq")
@@ -268,6 +280,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_urtuh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4spfl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5m5y3")
+}],
+"loop": false,
+"name": &"death",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_kxnvq")
 }, {
 "duration": 1.0,
@@ -399,6 +425,10 @@ height = 36.0
 [node name="player" type="CharacterBody2D"]
 y_sort_enabled = true
 script = ExtResource("1_qfebv")
+Speed = 100
+Health = 25
+Max_Health = 25
+Health_Regen = 2
 Damage = 3
 
 [node name="Damage_Iframes" type="Timer" parent="."]
@@ -413,7 +443,7 @@ shape = SubResource("CapsuleShape2D_ka724")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -15)
 sprite_frames = SubResource("SpriteFrames_rmbc5")
-animation = &"back_attack"
+animation = &"death"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
