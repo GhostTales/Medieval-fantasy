@@ -425,6 +425,11 @@ height = 36.0
 [node name="player" type="CharacterBody2D"]
 y_sort_enabled = true
 script = ExtResource("1_qfebv")
+Speed = 100
+Health = 25
+Max_Health = 25
+Health_Regen = 2
+Damage = 3
 
 [node name="Damage_Iframes" type="Timer" parent="."]
 unique_name_in_owner = true
