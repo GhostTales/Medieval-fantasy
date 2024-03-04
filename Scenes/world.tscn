@@ -306,7 +306,7 @@ region = Rect2(192, 0, 48, 48)
 atlas = ExtResource("5_88ohq")
 region = Rect2(240, 0, 48, 48)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_54t1s"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_hdsxy"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -379,7 +379,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_f2fmj"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_cj56t"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -452,7 +452,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_qxmf7"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_fusa4"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
@@ -569,7 +569,7 @@ position = Vector2(1052, 445)
 [node name="enemy" parent="Node2D" node_paths=PackedStringArray("_waypoints", "_player") instance=ExtResource("2_e1781")]
 position = Vector2(1011, 404)
 _waypoints = [NodePath("../../waypoint-1"), NodePath("../../waypoint-2"), NodePath("../../waypoint-3"), NodePath("../../waypoint-4")]
-_Enemy_Frames = SubResource("SpriteFrames_54t1s")
+_Enemy_Frames = SubResource("SpriteFrames_hdsxy")
 _player = NodePath("../../player")
 
 [node name="Node2D2" type="Node2D" parent="."]
@@ -577,7 +577,7 @@ _player = NodePath("../../player")
 [node name="enemy" parent="Node2D2" node_paths=PackedStringArray("_waypoints", "_player") instance=ExtResource("2_e1781")]
 position = Vector2(1032, 384)
 _waypoints = [NodePath("../../waypoint-1"), NodePath("../../waypoint-2"), NodePath("../../waypoint-3"), NodePath("../../waypoint-4")]
-_Enemy_Frames = SubResource("SpriteFrames_f2fmj")
+_Enemy_Frames = SubResource("SpriteFrames_cj56t")
 _player = NodePath("../../player")
 
 [node name="Node2D3" type="Node2D" parent="."]
@@ -585,7 +585,7 @@ _player = NodePath("../../player")
 [node name="enemy" parent="Node2D3" node_paths=PackedStringArray("_waypoints", "_player") instance=ExtResource("2_e1781")]
 position = Vector2(1041, 428)
 _waypoints = [NodePath("../../waypoint-1"), NodePath("../../waypoint-2"), NodePath("../../waypoint-3"), NodePath("../../waypoint-4")]
-_Enemy_Frames = SubResource("SpriteFrames_qxmf7")
+_Enemy_Frames = SubResource("SpriteFrames_fusa4")
 _player = NodePath("../../player")
 
 [connection signal="timeout" from="player/regen" to="player" method="_on_timer_timeout"]

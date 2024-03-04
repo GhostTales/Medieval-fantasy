@@ -56,7 +56,7 @@ public partial class player : CharacterBody2D
 
 		GetInput();     // Henter Player keyboard input
 
-		if (player_stats.Health > 0)
+		if (player_stats.IsAlive)
 			MoveAndSlide(); // Flytter sig i henhold fysikkens kræfter og glider af kolliderende Objekter
 
 		if (player_stats.Health <= 0 && player_stats.IsAlive)
